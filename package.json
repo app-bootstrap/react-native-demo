@@ -5,13 +5,15 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "bundle:android": "mkdir -p ./dist/temp-android && BUNDLE_TYPE=OnlineBundle react-native bundle --platform android --dev false --entry-file index.js --bundle-output ./dist/temp-android/DemoRN.jsbundle --assets-dest ./dist/temp-android",
+    "bundle:ios": "mkdir -p ./dist/temp-ios && BUNDLE_TYPE=OnlineBundle react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ./dist/temp-ios/DemoRN.jsbundle --assets-dest ./dist/temp-ios",
+    "dev": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "react": "17.0.2",
-    "react-native": "0.66.1"
+    "react-native": "0.68.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
